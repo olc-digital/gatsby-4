@@ -134,13 +134,13 @@ exports.createPages = async ({ actions, graphql }) => {
     }
   `)
 
-  const component = path.resolve(`./src/templates/page/index.tsx`)
+  const componentPath = path.resolve(`./src/templates/page/index.tsx`)
 
-  result.data.allDatoCmsPage.nodes.forEach(page =>
+  result.data.allDatoCmsPage.nodes.forEach(page => {
     createPage({
       path: page.slug || "/",
-      component,
+      component: componentPath,
       context: page,
     })
-  )
+  })
 }
