@@ -138,7 +138,7 @@ exports.createPages = async ({ actions, graphql }) => {
 
   result.data.allDatoCmsPage.nodes.forEach(page => {
     createPage({
-      path: page.slug || "/",
+      path: `${page.slug || "/"}`,
       component: componentPath,
       context: page,
     })
